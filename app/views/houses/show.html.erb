@@ -99,5 +99,12 @@
     </ul>
 </div> 
 
+<ul>
+      <% for user in @users %>  
+        <li>
+            <%= user.email %>
+        </li>
+      <% end %>
+    </ul>
    
 
