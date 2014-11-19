@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141118022818) do
     t.boolean  "is_paid"
     t.date     "due_date"
     t.string   "provider"
+    t.float    "split_bill"
     t.integer  "house_id"
     t.integer  "user_id"
     t.datetime "created_at"

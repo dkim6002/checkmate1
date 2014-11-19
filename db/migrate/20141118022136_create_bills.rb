@@ -6,6 +6,7 @@ class CreateBills < ActiveRecord::Migration
       t.boolean :is_paid
       t.date :due_date
       t.string :provider
+      t.float :split_bill
       t.references :house, index: true
       t.references :user, index: true
 

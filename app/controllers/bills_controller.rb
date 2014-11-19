@@ -20,6 +20,8 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(bill_params)
+    @users = User.where(house_id: @bill.house_id)
+    @bill.split_bill = @bill.amount/@users.count
     @bill.save
     
   end
@@ -40,6 +42,6 @@ class BillsController < ApplicationController
     end
 
     def bill_params
-      params.require(:bill).permit(:title, :amount, :is_paid, :due_date, :provider, :house_id)
+      params.require(:bill).permit(:title, :amount, :is_paid, :due_date, :provider, :house_id, :split_bill)
     end
 end

@@ -30,13 +30,22 @@
       <% for bill in @bills %>  
         <li>
           <%= bill.title %>
-          <%= bill.amount %>
+          <%= bill.split_bill %>
           <%= bill.due_date %>
           <%= bill.provider %>
         </li>
       <% end %>
     </ul>
 </div> 
+
+<ul>
+  <% for bill in @indiv_bill %>  
+    <li>
+      <%= bill %>
+    </li>
+  <% end %>
+</ul>
+
 
 
 <%= link_to 'House', house_path %> 
