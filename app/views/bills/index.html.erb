@@ -1,0 +1,37 @@
+<h1>Listing bills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Amount</th>
+      <th>Is paid</th>
+      <th>Due date</th>
+      <th>Provider</th>
+      <th>Houses</th>
+      <th>Users</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr>
+        <td><%= bill.title %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.is_paid %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.provider %></td>
+        <td><%= bill.houses %></td>
+        <td><%= bill.users %></td>
+        <td><%= link_to 'Show', bill %></td>
+        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bill', new_bill_path %>
