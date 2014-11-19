@@ -8,12 +8,12 @@ class HousesController < ApplicationController
   end
 
   def show
-    @bills = Bill.where(houses_id: @house.id)
-    @chores = Chore.where(houses_id: @house.id)
+    @bills = Bill.where(house_id: @house.id)
+    @chores = Chore.where(house_id: @house.id)
     @house = House.find(params[:id])
-    @users = User.where(houses_id: @house.id)
+    @users = User.where(house_id: @house.id)
     @user = User.find(current_user)
-    @user.houses_id = @house.id
+    @user.house_id = @house.id
     @user.save
   end
 
@@ -28,7 +28,7 @@ class HousesController < ApplicationController
   def create
     @house = House.new(house_params)
     @user = User.find(current_user)
-    @user.houses_id = @house.id
+    @user.house_id = @house.id
     @user.save
     if @house.save
       respond_to do |format|

@@ -17,7 +17,7 @@ $(document).ready(function(){
 				url: '/chores',
 				dataType: 'json',
 				method: 'POST',
-				data: { chore: { title: input, houses_id: house}},
+				data: { chore: { title: input, house_id: house}},
 				success: function(){
 					console.log('saved!');
 				}
@@ -43,7 +43,7 @@ $(document).ready(function(){
 				url: '/bills',
 				dataType: 'json',
 				method: 'POST',
-				data: { bill: { title: title, amount: amount, due_date: due_date, provider: provider, houses_id: house}},
+				data: { bill: { title: title, amount: amount, due_date: due_date, provider: provider, house_id: house}},
 				success: function(){
 					console.log('saved!');
 				}

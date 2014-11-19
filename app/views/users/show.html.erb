@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First Name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @user.img_url %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @user.bio %>
+</p>
+
+<p>
+  <strong>Interests:</strong>
+  <%= @user.interests %>
+</p>
+
+<h2>Bills</h2>
+    <ul>
+      <% for bill in @bills %>  
+        <li>
+          <%= bill.title %>
+          <%= bill.amount %>
+          <%= bill.due_date %>
+          <%= bill.provider %>
+        </li>
+      <% end %>
+    </ul>
+</div> 
+
+
+<%= link_to 'House', house_path %> 

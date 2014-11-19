@@ -6,8 +6,8 @@ class CreateBills < ActiveRecord::Migration
       t.boolean :is_paid
       t.date :due_date
       t.string :provider
-      t.references :houses, index: true
-      t.references :users, index: true
+      t.references :house, index: true
+      t.references :user, index: true
 
       t.timestamps
     end

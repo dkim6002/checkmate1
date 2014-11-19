@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text :bio
       t.text :interests
 
-      t.references :houses
+      t.references :house
 
       ## Recoverable
       t.string   :reset_password_token

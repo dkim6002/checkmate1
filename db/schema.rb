@@ -22,36 +22,36 @@ ActiveRecord::Schema.define(version: 20141118022818) do
     t.boolean  "is_paid"
     t.date     "due_date"
     t.string   "provider"
-    t.integer  "houses_id"
-    t.integer  "users_id"
+    t.integer  "house_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "bills", ["houses_id"], name: "index_bills_on_houses_id", using: :btree
-  add_index "bills", ["users_id"], name: "index_bills_on_users_id", using: :btree
+  add_index "bills", ["house_id"], name: "index_bills_on_house_id", using: :btree
+  add_index "bills", ["user_id"], name: "index_bills_on_user_id", using: :btree
 
   create_table "chores", force: true do |t|
     t.string   "title"
     t.boolean  "is_done"
-    t.integer  "houses_id"
-    t.integer  "users_id"
+    t.integer  "house_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "chores", ["houses_id"], name: "index_chores_on_houses_id", using: :btree
-  add_index "chores", ["users_id"], name: "index_chores_on_users_id", using: :btree
+  add_index "chores", ["house_id"], name: "index_chores_on_house_id", using: :btree
+  add_index "chores", ["user_id"], name: "index_chores_on_user_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["users_id"], name: "index_comments_on_users_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "houses", force: true do |t|
     t.string   "name"
@@ -66,12 +66,12 @@ ActiveRecord::Schema.define(version: 20141118022818) do
   end
 
   create_table "threads", force: true do |t|
-    t.integer "users_id"
-    t.integer "comments_id"
+    t.integer "user_id"
+    t.integer "comment_id"
   end
 
-  add_index "threads", ["comments_id"], name: "index_threads_on_comments_id", using: :btree
-  add_index "threads", ["users_id"], name: "index_threads_on_users_id", using: :btree
+  add_index "threads", ["comment_id"], name: "index_threads_on_comment_id", using: :btree
+  add_index "threads", ["user_id"], name: "index_threads_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20141118022818) do
     t.string   "img_url"
     t.text     "bio"
     t.text     "interests"
-    t.integer  "houses_id"
+    t.integer  "house_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

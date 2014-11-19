@@ -1,4 +1,4 @@
 class Bill < ActiveRecord::Base
   belongs_to :house
-  belongs_to :user
+  has_many :users, through: :house
 end
