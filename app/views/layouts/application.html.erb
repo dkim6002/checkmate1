@@ -21,7 +21,7 @@
       <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"><a href="#">
+      <li>
         <div class="login">
         <% if user_signed_in? %>
           Signed in as <%= current_user.email %> | Not you? <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -29,8 +29,8 @@
             <%= link_to "sign in", new_user_session_path %>
         <% end %>
         </div>
-      </a></li>
-        </ul>
+      </li>
+    </ul>
      
     </nav>
     </div>
