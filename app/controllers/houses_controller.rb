@@ -11,7 +11,7 @@ class HousesController < ApplicationController
     @bills = Bill.where(houses_id: @house.id)
     @chores = Chore.where(houses_id: @house.id)
     @house = House.find(params[:id])
-    @users = User.where(id: current_user)
+    @users = User.where(houses_id: @house.id)
     @user = User.find(current_user)
     @user.houses_id = @house.id
     @user.save
