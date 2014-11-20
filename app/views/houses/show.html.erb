@@ -109,4 +109,28 @@
   <% end %>
 </ul>
    
+<div class="container">
+
+    <% for user in @users %>
+      <div class="column">
+        <div class="profile-container">
+          <div class="user-img-div">
+            <img src="<%= user.img_url %>">
+          </div>
+          <div class="profile-name">
+            <span><%= user.first_name %> <%= user.last_name %></span>
+          </div>
+        </div>
+        <div class="chore">
+          <% for chore in @chores %>
+            <div class="chore-list">
+              <input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label>
+              <span><%= chore.title %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+
+</div>
 
