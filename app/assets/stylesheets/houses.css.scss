@@ -1,13 +1,21 @@
-.container {
+.cover-container {
+	background: url(StyleBlueprint.jpg);
 	height: 100%;
 	width: 100%;
 	border: 1px solid black;
+	min-height: 30em;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	
 }
 
 .column {
 	width: 23%;
 	height: 100%;
-	border: 1px solid black;
+	
 	display: inline-block;
 	min-height: 50em;
 }
@@ -27,7 +35,13 @@
 
 .chore-list {
 	padding-top: 1em;
-	background-color: rgb(170, 247, 244);
+	background-color: #A0F4A8;
+	border: 1px solid black;
+}
+
+.active {
+	background-color: #FF7676;
+	padding-top: 1em;
 	border: 1px solid black;
 }
 
@@ -40,7 +54,7 @@
   border-radius: 100%;
   margin-top: 6%;
   margin-left: 8%;
-  
+
 }
 
 .profile-name {
@@ -55,4 +69,19 @@
 
 .off-canvas-list h2 {
 	color: rgba(255, 255, 255, 0.7);
+}
+
+.chore-done {
+	padding-top: 1em;
+	border: 1px solid black;
+}
+
+
+
+.house-name {
+	background-color: rgba(18, 64, 126, 1);
+	text-align: center;
+	h1 {
+	color: #90B7FF;
+	}
 }

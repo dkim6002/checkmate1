@@ -1,47 +1,7 @@
 <div class="off-canvas-wrap" data-offcanvas>
 <div class="inner-wrap">
   <%= render 'shared/navigation' %>
- <a id="start_oauth2">Click here to create your WePay account</a>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @house.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @house.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @house.city %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @house.zip %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @house.state %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @house.description %>
-</p>
-
-<p>
-  <strong>Culture:</strong>
-  <%= @house.culture %>
-</p>
-
-<%= link_to 'Edit', edit_house_path(@house) %> |
-<%= link_to 'Back', houses_path %><br><br><br>
 
 <!-- <button data-dropdown="chore-drop" aria-controls="drop", aria-expanded="false" class="tiny alert round button dropdown">Create New Chores</button><br>
   <form id="chore-drop" data-dropdown-content class="f-dropdown" role="form", aria-hidden="false" tabindex="-1">
@@ -102,14 +62,43 @@
       <% end %>
     </ul>
 </div>  -->
+<div class="cover-container">
+  <div class="house-name"> 
+    <h1>
+      <%= @house.name %>
+    </h1>
+  </div>
+<p>
+  <strong>Address:</strong>
+  <%= @house.address %>
+</p>
 
-<ul>
-  <% for user in @users %>  
-    <li>
-        <%= link_to user.email, user_path(user) %>
-    </li>
-  <% end %>
-</ul>
+<p>
+  <strong>City:</strong>
+  <%= @house.city %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @house.zip %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @house.state %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @house.description %>
+</p>
+
+<p>
+  <strong>Culture:</strong>
+  <%= @house.culture %>
+</p>
+
+</div>
    
 <div class="container">
 
@@ -127,7 +116,7 @@
           <% user.chores.each do |f| %>
             <div class="chore-list">
               <input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label>
-              <span><%= f.title %></span>
+              <span class="inner"><%= f.title %></span>
             </div>
           <% end %>
         </div>
