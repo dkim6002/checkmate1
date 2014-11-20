@@ -1,3 +1,7 @@
+<div class="off-canvas-wrap" data-offcanvas>
+<div class="inner-wrap">
+  <%= render 'shared/navigation' %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -46,6 +50,7 @@
   <% end %>
 </ul>
 
+<%= link_to 'House', house_path(current_user.house_id) %>
 
-
-<%= link_to 'House', house_path %> 
+</div>
+</div> 

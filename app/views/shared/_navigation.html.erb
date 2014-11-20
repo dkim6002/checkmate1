@@ -1,0 +1,62 @@
+
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h1 class="title">Checkmate</h1>
+      </section>
+
+      <section class="right-small">
+        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+    </nav>
+
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><h2><%= link_to current_user.first_name, user_path(current_user.id) %></h2></li>
+        <li><a href="#" data-options="align:bottom" data-dropdown="chore-drop" >Create New Chore</a>
+          <form id="chore-drop" class="small content f-dropdown" data-dropdown-content>
+            <ul>
+              <input type="text" id="new-chore" placeholder="Create a New Chore">
+              <input type="hidden" id="chore-house" value="<%= params[:id] %>" >
+              <input type="submit" value="Enter">
+            </ul>
+          </form>  
+          </li>
+        <li><a href="#" data-options="align:bottom" data-dropdown="bill-drop" >Add a Bill</a>
+          <form id="bill-drop" class="small content f-dropdown" data-dropdown-content>
+            <ul>
+              <li><input type="text" id="bill-title" placeholder="Title"></li>
+              <li><input type="text" id="bill-amount" placeholder="Amount"></li>
+              <li><input type="date" id="bill-duedate" placeholder="Due Date"></li>
+              <li><input type="text" id="bill-provider" placeholder="Provider"></li>
+              <li><input type="hidden" id="bill-house" value="<%= params[:id] %>" ></li>
+              <li><input type="submit" value="Enter"></li>
+            </ul>
+          </form>  
+      </ul>
+    </aside>
+
+    <aside class="right-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Users</label></li>
+        <% for user in @users %>
+        <li><a href="#"><%= user.first_name %> <%= user.last_name %></a></li> 
+        <% end %>
+      </ul>
+    </aside>
+
+    <section class="main-section">
+      <!-- content goes here -->
+    </section>
+
+  <a class="exit-off-canvas"></a>
+   
+    <% if user_signed_in? %>
+      Signed in as <%= current_user.email %> | Not you? <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "sign in", new_user_session_path %>
+    <% end %>
+        

@@ -14,8 +14,6 @@
     @users = User.where(house_id: @house.id)
     @user = User.find(current_user)
     @user.house_id = @house.id
-    @user_chore = User.all
-    @chore = Chore.where(user_id: @user.id)
     @user.save
   end
 
