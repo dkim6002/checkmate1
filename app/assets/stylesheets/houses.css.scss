@@ -3,13 +3,13 @@
 	height: 100%;
 	width: 100%;
 	border: 1px solid black;
-	min-height: 30em;
+	min-height: 36em;
 }
 
 .container {
 	height: 100%;
 	width: 100%;
-	
+	margin-top: 3em;
 }
 
 .column {
@@ -17,7 +17,7 @@
 	height: 100%;
 	
 	display: inline-block;
-	min-height: 50em;
+	min-height: 40em;
 }
 
 .profile-container {
@@ -76,12 +76,23 @@
 	border: 1px solid black;
 }
 
-
+input[type=checkbox] {
+	margin-left: 2em;
+}
 
 .house-name {
 	background-color: rgba(18, 64, 126, 1);
 	text-align: center;
+	min-height: 5.4em;
 	h1 {
 	color: #90B7FF;
+	}
+}
+
+.bill-list {
+	text-align: center;
+	color: #ffffff;
+	h2{
+	color: #ffffff;
 	}
 }

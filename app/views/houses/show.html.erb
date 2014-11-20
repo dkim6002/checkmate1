@@ -2,58 +2,19 @@
 <div class="inner-wrap">
   <%= render 'shared/navigation' %>
 
-
-<!-- <button data-dropdown="chore-drop" aria-controls="drop", aria-expanded="false" class="tiny alert round button dropdown">Create New Chores</button><br>
-  <form id="chore-drop" data-dropdown-content class="f-dropdown" role="form", aria-hidden="false" tabindex="-1">
-    <ul>
-     <input type="text" id="new-chore" placeholder="Create a New Chore">
-     <input type="hidden" id="chore-house" value="<%= params[:id] %>" >
-     <input type="submit" value="Enter">
-    </ul>
-  </form>
-
-<div id="chore-list">
-  <h2>Chores</h2>
-    <ul>
-      <% for chore in @chores %>  
-        <li>
-          <div class="large-6 columns">
-            <input id="chore-checkbox" type="checkbox"><label for="chore-checkbox">Completed?</label>
-          <p class="line"><%= chore.title %></p>
-            <button data-dropdown="name-drop" aria-controls="drop", aria-expanded="false" class="tiny alert round button dropdown">Mate</button><br>
-            <ul id="name-drop" data-dropdown-content class="f-dropdown" role="menu", aria-hidden="false" tabindex="-1">
-              <% for user in @users %>  
-                <li>
-                    <%= user.email %>
-                </li>
-              <% end %>
-            </ul>
-        </li>
-      <% end %>
-    </ul>
-</div>    
-
-<button data-dropdown="bill-drop" aria-controls="drop", aria-expanded="false" class="tiny alert round button dropdown">Add a bill</button><br>
-
-  <form id="bill-drop" data-dropdown-content class="f-dropdown" role="form", aria-hidden="false" tabindex="-1">
-    
-    <ul>
-    <li><input type="text" id="bill-title" placeholder="Title"></li>
-    <li><input type="text" id="bill-amount" placeholder="Amount"></li>
-    <li><input type="date" id="bill-duedate" placeholder="Due Date"></li>
-    <li><input type="text" id="bill-provider" placeholder="Provider"></li>
-    <li><input type="hidden" id="bill-house" value="<%= params[:id] %>" ></li>
-    <li><input type="submit" value="Enter"></li>
-  </ul>
- </form>
-
- <div id="bill-list">
+ 
+<div class="cover-container">
+  <div class="house-name"> 
+    <h1>
+      <%= @house.name %>
+    </h1>
+  </div>
+  <div class="bill-list">
   <h2>Bills</h2>
     <ul>
       <% for bill in @bills %>  
         <li>
           <div class="large-6 columns">
-            <input id="bill-checkbox" type="checkbox"><label for="bill-checkbox">Paid?</label>
             <%= bill.title %>
             <%= bill.amount %>
             <%= bill.due_date %>
@@ -61,42 +22,7 @@
         </li>
       <% end %>
     </ul>
-</div>  -->
-<div class="cover-container">
-  <div class="house-name"> 
-    <h1>
-      <%= @house.name %>
-    </h1>
-  </div>
-<p>
-  <strong>Address:</strong>
-  <%= @house.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @house.city %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @house.zip %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @house.state %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @house.description %>
-</p>
-
-<p>
-  <strong>Culture:</strong>
-  <%= @house.culture %>
-</p>
+</div> 
 
 </div>
    
