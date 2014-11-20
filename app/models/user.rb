@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :bills, through: :house
   has_one :house
   has_one :thread
+  has_many :chores
 
   def self.calc_bill(bills, users)
   	split = []

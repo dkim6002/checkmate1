@@ -122,10 +122,10 @@
           </div>
         </div>
         <div class="chore">
-          <% for chore in @chores %>
+          <% user.chores.each do |f| %>
             <div class="chore-list">
               <input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label>
-              <span><%= chore.title %></span>
+              <span><%= f.title %></span>
             </div>
           <% end %>
         </div>
