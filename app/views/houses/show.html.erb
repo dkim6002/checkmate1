@@ -41,7 +41,7 @@
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %><br><br><br>
 
-<button data-dropdown="chore-drop" aria-controls="drop", aria-expanded="false" class="tiny alert round button dropdown">Create New Chores</button><br>
+<!-- <button data-dropdown="chore-drop" aria-controls="drop", aria-expanded="false" class="tiny alert round button dropdown">Create New Chores</button><br>
   <form id="chore-drop" data-dropdown-content class="f-dropdown" role="form", aria-hidden="false" tabindex="-1">
     <ul>
      <input type="text" id="new-chore" placeholder="Create a New Chore">
@@ -78,7 +78,7 @@
     <ul>
     <li><input type="text" id="bill-title" placeholder="Title"></li>
     <li><input type="text" id="bill-amount" placeholder="Amount"></li>
-    <li><input type="text" id="bill-duedate" placeholder="Due Date"></li>
+    <li><input type="date" id="bill-duedate" placeholder="Due Date"></li>
     <li><input type="text" id="bill-provider" placeholder="Provider"></li>
     <li><input type="hidden" id="bill-house" value="<%= params[:id] %>" ></li>
     <li><input type="submit" value="Enter"></li>
@@ -99,7 +99,7 @@
         </li>
       <% end %>
     </ul>
-</div> 
+</div>  -->
 
 <ul>
   <% for user in @users %>  

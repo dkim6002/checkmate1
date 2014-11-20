@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	$(document).foundation({tab: {toggleable: false}});
 
 		console.log('ready!');
 
@@ -22,7 +21,7 @@ $(document).ready(function(){
 					console.log('saved!');
 				}
 			});
-			$('#chore-list ul').append('<li><div class="large-6 columns"><input id="chore-checkbox" type="checkbox"><label for="chore-checkbox">Completed?</label>'+input+'</li>');
+			$('#chore-list').append('<input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label><span>'+title+'</span>');
 
 		}
 

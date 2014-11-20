@@ -9,6 +9,7 @@
 	height: 100%;
 	border: 1px solid black;
 	display: inline-block;
+	min-height: 50em;
 }
 
 .profile-container {
@@ -42,7 +43,15 @@
 }
 
 .profile-name {
-	position: relative;
-	left: 55%;
-	bottom: 50%;
+	position: absolute;
+	left: 56%;
+	bottom: 87%;
+}
+
+#bill-drop li {
+	list-style-type: none;
+}
+
+.off-canvas-list h2 {
+	color: rgba(255, 255, 255, 0.7);
 }
