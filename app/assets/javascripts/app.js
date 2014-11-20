@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	$(document).foundation({tab: {toggleable: false}});
 
 		console.log('ready!');
 

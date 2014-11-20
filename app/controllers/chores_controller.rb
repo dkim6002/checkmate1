@@ -20,6 +20,8 @@ class ChoresController < ApplicationController
 
   def create
     @chore = Chore.new(chore_params)
+    @users = User.where(house_id: @chore.house_id)
+    @chore.user_id = @users.sample.id
     @chore.save
   end
 
@@ -39,6 +41,6 @@ class ChoresController < ApplicationController
     end
 
     def chore_params
-      params.require(:chore).permit(:title, :is_done, :house_id)
+      params.require(:chore).permit(:title, :is_done, :house_id, :user_id)
     end
 end
