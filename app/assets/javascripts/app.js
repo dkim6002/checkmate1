@@ -79,4 +79,10 @@ $(document).ready(function(){
 			
 		})
 
+		$(function() {
+	    $( ".chore" ).sortable({
+	      connectWith: ".chore"
+	    }).disableSelection();
+	  });
+
 });

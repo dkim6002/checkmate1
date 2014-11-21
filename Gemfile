@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.1.2'
-
+gem 'jquery-ui-rails'
 gem 'foundation-rails'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

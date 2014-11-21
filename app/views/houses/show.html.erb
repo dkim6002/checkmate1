@@ -40,7 +40,7 @@
         </div>
         <div class="chore">
           <% user.chores.each do |f| %>
-            <div class="chore-list">
+            <div id="connected-chore" class="chore-list">
               <input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label>
               <span class="inner"><%= f.title %></span>
             </div>
