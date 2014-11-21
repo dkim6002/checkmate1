@@ -22,7 +22,9 @@ class ChoresController < ApplicationController
     @chore = Chore.new(chore_params)
     @users = User.where(house_id: @chore.house_id)
     @chore.user_id = @users.sample.id
-    @chore.save
+    if @chore.save
+      respong_with(@chore)
+    end
   end
 
   def update

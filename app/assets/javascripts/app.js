@@ -33,9 +33,12 @@ $(document).ready(function(){
 			provider = $('#bill-provider').val();
 			house = $('#bill-house').val();
 			console.log(title, amount, due_date, provider, house);
-
 			updateBill(title, amount, due_date, provider, house);
-		});
+		}).keyup(function (e) {
+        if(e.keyCode === 13) {
+            $("#bill-drop").hide();
+        }            
+    });
 
 		function updateBill(title, amount, due_date, provider, house) {
 			$.ajax({
