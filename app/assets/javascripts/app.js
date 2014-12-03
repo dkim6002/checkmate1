@@ -51,7 +51,7 @@ $(document).ready(function(){
 				}
 			});
 			
-			$('#bill-list ul').append('<li><div class="large-6 columns"><input id="bill-checkbox" type="checkbox"><label for="bill-checkbox">Paid?</label>'+title+amount+due_date+provider+'</li>');
+			$('.bill-list ul').append('<li><div class="large-6 columns"><input id="bill-checkbox" type="checkbox"><label for="bill-checkbox">Paid?</label>'+title+amount+due_date+provider+'</li>');
 
 		}
 
