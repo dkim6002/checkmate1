@@ -92,8 +92,15 @@ input[type=checkbox] {
 
 .bill-list {
 	text-align: center;
-	color: #ffffff;
-	h2{
-	color: #ffffff;
+	width: 50%;
+	opacity: .9;
+	margin: 0 auto;
+	border:	1px solid black;
+	min-height: 10em;
+	color: black;
+	background-color: #ffffff;
+	li {
+		list-style-type: none;
 	}
 }
+

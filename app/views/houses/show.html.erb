@@ -28,16 +28,16 @@
    
 <div class="container">
 
-    <% for user in @users %>
-      <div class="column">
-        <div class="profile-container">
-          <div class="user-img-div">
-            <img src="<%= user.img_url %>">
-          </div>
-          <div class="profile-name">
-            <span><%= user.first_name %> <%= user.last_name %></span>
-          </div>
+  <% for user in @users %>
+    <div class="column">
+      <div class="profile-container">
+        <div class="user-img-div">
+          <img src="<%= user.img_url %>">
         </div>
+        <div class="profile-name">
+          <span><%= user.first_name %> <%= user.last_name %></span>
+        </div>
+      </div>
         <div class="chore">
           <% user.chores.each do |f| %>
             <div id="connected-chore" class="chore-list">

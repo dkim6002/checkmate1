@@ -21,7 +21,9 @@ $(document).ready(function(){
 					console.log('saved!');
 				}
 			});
-			$('#chore-list').append('<input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label><span>'+title+'</span>');
+			$('.chore').append('<input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label><span>'+title+'</span>');
+
+			
 
 		}
 
