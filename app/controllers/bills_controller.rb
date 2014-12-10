@@ -22,7 +22,12 @@ class BillsController < ApplicationController
     @bill = Bill.new(bill_params)
     @users = User.where(house_id: @bill.house_id)
     @bill.split_bill = @bill.amount/@users.count
-    @bill.save
+    if @bill.save
+      respond_to do |format|
+        format.html
+        format.json { render json: @chore}
+      end
+    end
     
   end
 

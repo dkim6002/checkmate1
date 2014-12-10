@@ -13,6 +13,8 @@ $(document).ready(function(){
 		}).keyup(function (e) {
         if(e.keyCode === 13) {
             $("#chore-drop").hide();
+            $('.off-canvas-wrap').removeClass('move-right');
+            $('#new-chore').val('');
         }            
     });
 
@@ -27,9 +29,11 @@ $(document).ready(function(){
 					console.log(data.user_id);
 					list = data.user_id;
 					$('#'+list+'').append('<div id="connected-chore" class="chore-list"><input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label><span class="inner">'+title+'</span></div>');
-
-					$('.off-canvas-wrap').removeClass('move-right');
+					$("#chore-drop").hide();
+          $('.off-canvas-wrap').removeClass('move-right');
+          $('#new-chore').val('');
 				}
+				
 			});
 			
 
@@ -49,6 +53,8 @@ $(document).ready(function(){
 		}).keyup(function (e) {
         if(e.keyCode === 13) {
             $("#bill-drop").hide();
+            $('.off-canvas-wrap').removeClass('move-right');
+            $('#bill-title').val('');
         }            
     });
 
@@ -60,36 +66,17 @@ $(document).ready(function(){
 				data: { bill: { title: title, amount: amount, due_date: due_date, provider: provider, house_id: house}},
 				success: function(){
 					console.log('saved!');
+					$("#bill-drop").hide();
+          $('.off-canvas-wrap').removeClass('move-right');
+          $('#bill-title').val('');
 				}
 			});
 
-			$('.off-canvas-wrap').removeClass('move-right');
 			
 			$('.bill-list ul').append('<li><div class="large-6 columns"><input id="bill-checkbox" type="checkbox"><label for="bill-checkbox">Paid?</label>'+title+amount+due_date+provider+'</li>');
 
 		}
 
-		// WePay.set_endpoint("stage"); // stage or production
-
-		// WePay.OAuth2.button_init(document.getElementById('start_oauth2'), {
-		//     "client_id":"190452",
-		//      "scope":["manage_accounts","collect_payments","view_user","send_money","preapprove_payments"],
-		//     "user_name":"test user",
-		//     "user_email":"test@example.com",
-		//     "redirect_uri":"http://localhost:3000/auth/:provider/callback",
-		//     "top":100, // control the positioning of the popup with the top and left params
-		//     "left":100,
-		//     "state":"robot", // this is an optional parameter that lets you persist some state value through the flow
-		//     "callback":function(data) {
-		//     	console.log(data[0])
-		// 		/** This callback gets fired after the user clicks "grant access" in the popup and the popup closes. The data object will include the code which you can pass to your server to make the /oauth2/token call **/
-		// 		if (data.code.length !== 0) {
-		// 			// send the data to the server
-		// 		} else {
-		// 			// an error has occurred and will be in data.error
-		// 		}
-		// 	}
-		// });
 
 		$('input[type=checkbox]').change(function(){
 			$(this).parent().toggleClass('chore-list active');
