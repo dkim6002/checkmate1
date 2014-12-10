@@ -23,7 +23,10 @@ class ChoresController < ApplicationController
     @users = User.where(house_id: @chore.house_id)
     @chore.user_id = @users.sample.id
     if @chore.save
-      respong_with(@chore)
+      respond_to do |format|
+        format.html
+        format.json { render json: @chore}
+      end
     end
   end
 

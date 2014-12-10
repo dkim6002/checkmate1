@@ -9,7 +9,12 @@ $(document).ready(function(){
 			console.log(title, house);
 
 			updateChore(title, house);
-		});
+
+		}).keyup(function (e) {
+        if(e.keyCode === 13) {
+            $("#chore-drop").hide();
+        }            
+    });
 
 		function updateChore(input, house) {
 			$.ajax({
@@ -17,11 +22,16 @@ $(document).ready(function(){
 				dataType: 'json',
 				method: 'POST',
 				data: { chore: { title: input, house_id: house}},
-				success: function(){
+				success: function(data){
 					console.log('saved!');
+					console.log(data.user_id);
+					list = data.user_id;
+					$('#'+list+'').append('<div id="connected-chore" class="chore-list"><input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label><span class="inner">'+title+'</span></div>');
+
+					$('.off-canvas-wrap').removeClass('move-right');
 				}
 			});
-			$('.chore').append('<input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label><span>'+title+'</span>');
+			
 
 			
 

@@ -38,7 +38,7 @@
           <span><%= user.first_name %> <%= user.last_name %></span>
         </div>
       </div>
-        <div class="chore">
+        <div class="chore" id="<%= user.id %>">
           <% user.chores.each do |f| %>
             <div id="connected-chore" class="chore-list">
               <input id="chore-checkbox" type="checkbox"><label for="chore-checkbox"></label>
