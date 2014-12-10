@@ -14,8 +14,10 @@ class UsersController < ApplicationController
 	end
 
 	private
-    def set_user
-      @user = User.find(params[:id])
+    
+
+    def user_params
+      params.require(:user).permit(:email, :first_name, :last_name, :img_url, :bio, :interests, :wepay_access_token, :wepay_account_id, :house_id)
     end
 
 end

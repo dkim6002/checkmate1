@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
+
+
 ruby '2.1.2'
+gem 'wepay'
 gem 'jquery-ui-rails'
 gem 'foundation-rails'
 gem 'devise'

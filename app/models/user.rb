@@ -19,5 +19,10 @@ class User < ActiveRecord::Base
   	end
   	return split
   end
+
+  # returns a url
+  def wepay_authorization_url(redirect_uri)
+    Wefarm::Application::WEPAY.oauth2_authorize_url(redirect_uri, self.email, self.name)
+  end
   
 end

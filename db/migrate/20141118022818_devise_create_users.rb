@@ -9,6 +9,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :img_url
       t.text :bio
       t.text :interests
+      t.string :wepay_access_token
+      t.integer :wepay_account_id
 
       t.references :house
 

@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20141118022818) do
     t.string   "img_url"
     t.text     "bio"
     t.text     "interests"
+    t.string   "wepay_access_token"
+    t.integer  "wepay_account_id"
     t.integer  "house_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
